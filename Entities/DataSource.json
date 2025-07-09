@@ -1,0 +1,62 @@
+{
+  "name": "DataSource",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the data source"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "amplitude_export",
+        "csv_upload",
+        "json_upload"
+      ],
+      "description": "Type of data source"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the uploaded file"
+    },
+    "total_events": {
+      "type": "number",
+      "description": "Total number of events in this source"
+    },
+    "processed_events": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of events processed"
+    },
+    "enriched_events": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of events enriched"
+    },
+    "processing_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "processing",
+        "completed",
+        "failed"
+      ],
+      "default": "pending",
+      "description": "Processing status"
+    },
+    "date_range_start": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start date of events in this source"
+    },
+    "date_range_end": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End date of events in this source"
+    }
+  },
+  "required": [
+    "name",
+    "source_type"
+  ]
+}

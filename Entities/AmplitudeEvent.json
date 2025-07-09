@@ -1,0 +1,72 @@
+{
+  "name": "AmplitudeEvent",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Unique identifier for the event"
+    },
+    "event_type": {
+      "type": "string",
+      "description": "Type of event (e.g., page_view, click, purchase)"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "User identifier"
+    },
+    "device_id": {
+      "type": "string",
+      "description": "Device identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event timestamp"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address of the user"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "User agent string"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country derived from IP"
+    },
+    "city": {
+      "type": "string",
+      "description": "City derived from IP"
+    },
+    "region": {
+      "type": "string",
+      "description": "Region/state derived from IP"
+    },
+    "organization": {
+      "type": "string",
+      "description": "Organization/ISP derived from IP"
+    },
+    "is_enriched": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether IP enrichment has been performed"
+    },
+    "enrichment_confidence": {
+      "type": "number",
+      "description": "Confidence score for IP enrichment (0-1)"
+    },
+    "event_properties": {
+      "type": "object",
+      "description": "Additional event properties"
+    },
+    "user_properties": {
+      "type": "object",
+      "description": "User properties at time of event"
+    }
+  },
+  "required": [
+    "event_type",
+    "timestamp"
+  ]
+}
